@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &69407844 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 975832919377035406, guid: a859df479fae0b246bba01b8322e2f18, type: 3}
+  m_PrefabInstance: {fileID: 1159704879}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &263981573 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5945046322659777969, guid: 55af89861b9d8044aa1acbce787a02f0, type: 3}
@@ -716,8 +721,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Resume Game
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b376455f3fa49dc41ba5d87af0e403da, type: 2}
+  m_sharedMaterial: {fileID: 6134238821238448767, guid: b376455f3fa49dc41ba5d87af0e403da, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -741,8 +746,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 22
-  m_fontSizeBase: 22
+  m_fontSize: 18.99
+  m_fontSizeBase: 18.99
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -875,7 +880,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 822230536}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 565024777769008101}
+        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
+        m_MethodName: QuitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &822230536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1181,6 +1198,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7631153186758429197, guid: a859df479fae0b246bba01b8322e2f18, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 565024777769008101}
+    - target: {fileID: 7631153186758429197, guid: a859df479fae0b246bba01b8322e2f18, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CloseSettings
+      objectReference: {fileID: 0}
     - target: {fileID: 7986760791304577962, guid: a859df479fae0b246bba01b8322e2f18, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1
@@ -1297,7 +1322,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1181937747}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 565024777769008101}
+        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
+        m_MethodName: PauseGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1181937747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1502,7 +1539,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1635898496}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 565024777769008101}
+        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1635898496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1623,7 +1672,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1700723287}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 565024777769008101}
+        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
+        m_MethodName: OpenSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1700723287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1736,10 +1797,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 565024777769008100}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50f03a93f49f1664eb5eb9565cc07a47, type: 3}
+  m_Script: {fileID: 11500000, guid: 6f4d6026c51bb30418cfa4bc77f8caac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 6111361042861838509}
+  settingsMenu: {fileID: 69407844}
 --- !u!114 &682956021504458531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1944,7 +2006,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &6700164269834059596
 MonoBehaviour:
   m_ObjectHideFlags: 0
