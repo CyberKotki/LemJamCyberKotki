@@ -4,21 +4,21 @@ using UnityEngine.UI;
 
 public class PauseControl : MonoBehaviour
 {
-    public static bool gameIsPaused;
+    public static bool GameIsPaused;
     public GameObject pauseMenu;
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            gameIsPaused = !gameIsPaused;
+            GameIsPaused = !GameIsPaused;
             PauseGame();
         }
     }
 
     void PauseGame()
     {
-        if (gameIsPaused)
+        if (GameIsPaused)
         {
             Time.timeScale = 0f;
             AudioListener.pause = true;
@@ -33,4 +33,4 @@ public class PauseControl : MonoBehaviour
     }
 }
 
-// use if (!PauseControl.gameIsPaused) {} to disable inputs
+// use if (!PauseControl.GameIsPaused) {} to disable inputs
