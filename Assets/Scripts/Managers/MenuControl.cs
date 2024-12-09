@@ -9,7 +9,9 @@ public class MenuControl : MonoBehaviour
 
     void Start()
     {
-        CloseSettings(); // Make sure settings are closed on startup
+        // Make sure settings and pause menus are closed on startup
+        CloseSettings();
+        pauseMenu.SetActive(false);
     }
 
     void Update()
