@@ -13,7 +13,7 @@ public class SoundFXManager : MonoBehaviour
         if (instance == null) instance = this;
     }
 
-    public void PlaySFXClip(AudioClip sfxClip, Transform spawnTransform, float volume=1.0f)
+    public void PlaySFXClip(AudioClip sfxClip, Transform spawnTransform, Boolean ignorePause = false, float volume = 1.0f)
     {
         //spawn in gameObject
         AudioSource audioSource = Instantiate(sfxObject, spawnTransform.position, Quaternion.identity);
@@ -25,6 +25,7 @@ public class SoundFXManager : MonoBehaviour
         audioSource.volume = volume;
 
         //play sound
+        audioSource.ignoreListenerPause = ignorePause;
         audioSource.Play();
 
         //get lenght of sfxClip
@@ -34,7 +35,8 @@ public class SoundFXManager : MonoBehaviour
         Destroy(audioSource.gameObject, clipLength);
     }
 
-    public void PlayRandomSFXClip(AudioClip[] sfxClip, Transform spawnTransform, float volume=1.0f)
+    public void PlayRandomSFXClip(AudioClip[] sfxClip, Transform spawnTransform, Boolean ignorePause = false,
+        float volume = 1.0f)
     {
         //assign a random index
         int randIdx = Random.Range(0, sfxClip.Length);
@@ -52,6 +54,7 @@ public class SoundFXManager : MonoBehaviour
         audioSource.pitch = Random.Range(0.9f, 1.1f);
 
         //play sound
+        audioSource.ignoreListenerPause = ignorePause;
         audioSource.Play();
 
         // Get the length of the clip (adjusted for pitch)
