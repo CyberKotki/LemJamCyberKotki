@@ -13,7 +13,7 @@ public class SoundFXManager : MonoBehaviour
         if (instance == null) instance = this;
     }
 
-    public void PlaySFXClip(AudioClip sfxClip, Transform spawnTransform, float volume)
+    public void PlaySFXClip(AudioClip sfxClip, Transform spawnTransform, float volume=1.0f)
     {
         //spawn in gameObject
         AudioSource audioSource = Instantiate(sfxObject, spawnTransform.position, Quaternion.identity);
@@ -34,7 +34,7 @@ public class SoundFXManager : MonoBehaviour
         Destroy(audioSource.gameObject, clipLength);
     }
 
-    public void PlayRandomSFXClip(AudioClip[] sfxClip, Transform spawnTransform, float volume)
+    public void PlayRandomSFXClip(AudioClip[] sfxClip, Transform spawnTransform, float volume=1.0f)
     {
         //assign a random index
         int randIdx = Random.Range(0, sfxClip.Length);
@@ -64,8 +64,9 @@ public class SoundFXManager : MonoBehaviour
 
 
 // to play sfx use
-// SoundFXManager.instance.PlaySFXClip(<soundClip>, transform, <volume float>)
+// [SerializeField] private AudioClip <soundClip name>
+// SoundFXManager.instance.PlaySFXClip(<soundClip name>, transform, <volume float - default 1.0f>)
 
 // for random sfx use
 // [SerializeField] private AudioClip[] <soundClip name>
-// SoundFXManager.instance.PlayRandomSFXClip(<soundClip name>, transform, <volume float>)
+// SoundFXManager.instance.PlayRandomSFXClip(<soundClip name>, transform, <volume float - default 1.0f>)
