@@ -3,28 +3,52 @@ using UnityEngine.SceneManagement;
 
 public class MenuControl : MonoBehaviour
 {
+    public static bool GameIsPaused;
+    public GameObject pauseMenu;
     public GameObject settingsMenu;
 
     void Start()
     {
         CloseSettings(); // Make sure settings are closed on startup
     }
-    
+
     void Update()
     {
         if (settingsMenu.activeInHierarchy && Input.GetKeyDown(KeyCode.Escape))
         {
             CloseSettings();
         }
+        else if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            GameIsPaused = !GameIsPaused;
+            PauseGame();
+        }
     }
-    
-    
+
+    public void PauseGame()
+    {
+        if (GameIsPaused)
+        {
+            Time.timeScale = 0f;
+            AudioListener.pause = true;
+        }
+        else
+        {
+            Time.timeScale = 1;
+            AudioListener.pause = false;
+        }
+
+        pauseMenu.SetActive(!pauseMenu.activeSelf);
+    }
+
+    // use if (!PauseControl.GameIsPaused) {} to disable inputs
+
+
     // Method to load a new scene by id
     public void LoadScene(int sceneID)
     {
         Debug.Log("change to scene ID#" + sceneID);
         SceneManager.LoadScene(sceneID);
-        
     }
 
     public void OpenSettings()
